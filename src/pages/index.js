@@ -15,7 +15,11 @@ const BlogIndex = ({ data, location }) => {
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
         <Bio />
-        <p>No blog posts found. Add markdown posts to "content/blog" (or the directory you specified for the "gatsby-source-filesystem" plugin in gatsby-config.js).</p>
+        <p>
+          No blog posts found. Add markdown posts to "content/blog" (or the
+          directory you specified for the "gatsby-source-filesystem" plugin in
+          gatsby-config.js).
+        </p>
       </Layout>
     )
   }
@@ -23,42 +27,9 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
-      {posts.map((post) => {
-        const title = post.frontmatter.title || post.fields.slug
-        return (
-          <article
-            key={post.fields.slug}
-            itemScope
-            itemType="http://schema.org/Article"
-          >
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link
-                  style={{ boxShadow: `none` }}
-                  to={post.fields.slug}
-                  itemProp="url"
-                >
-                  <span itemProp="headline">{title}</span>
-                </Link>
-              </h3>
-              <small>{post.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: post.frontmatter.description || post.excerpt,
-                }}
-                itemProp="description"
-              />
-            </section>
-          </article>
-        )
-      })}
+      <Link to="/hello-world">
+        Clicking me redirects to /hello-world which breaks
+      </Link>
     </Layout>
   )
 }
