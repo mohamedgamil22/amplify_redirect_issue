@@ -27,9 +27,9 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Link to="/hello-world">
+      <a href="https://test-redirect.d3hx1m5su9or1x.amplifyapp.com/hello-world">
         Clicking me redirects to /hello-world which breaks
-      </Link>
+      </a>
     </Layout>
   )
 }
